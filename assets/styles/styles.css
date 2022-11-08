@@ -17,25 +17,6 @@
   text-shadow: none;
 }
 
-html,
-body {
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-  font-family: "Spoqa Han Sans Neo", sans-serif;
-}
-
-body {
-  background-color: #000;
-  color: #fff;
-  display: flex;
-  align-items: center;
-}
-
-video {
-  width: 100%;
-}
-
 img {
   height: auto;
   max-width: 100%;
@@ -81,23 +62,12 @@ input[type=url],
 [type=textarea],
 textarea {
   border-radius: 0;
-  -webkit-appearance: none;
   outline: none;
 }
 
 input[type=text],
 input[type=password] {
   padding-left: 10px;
-}
-
-.wrapper {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 16/9;
-}
-
-.headline {
-  font-family: "S Core Dream", sans-serif;
 }
 
 :root {
@@ -178,15 +148,123 @@ input[type=password] {
   font-weight: 100;
   src: url("../fonts/S-CoreDream-1Thin.woff") format("woff");
 }
-.typhoon .video {
+html,
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  font-family: "Spoqa Han Sans Neo", sans-serif;
+}
+
+body {
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  align-items: center;
+}
+
+video {
   width: 100%;
+}
+
+li {
+  margin-top: 3%;
+  display: flex;
+  align-items: center;
+}
+
+li.no-bullet {
+  margin-top: 0;
+}
+
+li::before {
+  content: "";
+  display: block;
+  width: 6px;
+  height: 12px;
+  background-color: #fff;
+  margin-right: 8px;
+  margin-bottom: 2px;
+}
+
+li.no-bullet::before {
+  content: "";
+  display: block;
+  width: 8px;
+  height: 18px;
+  background-color: transparent;
+}
+
+.wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/9;
+}
+
+.headline {
+  font-family: "S Core Dream", sans-serif;
+}
+.headline.small {
+  font-size: 1.5vw;
+}
+
+p {
+  font-size: 1.34vw;
+}
+
+p.t-lg {
+  font-size: 2.4vw;
+}
+
+p.t-md {
+  font-size: 1.2vw;
+  margin-top: 4%;
+}
+
+p.t-sm {
+  font-size: 1.14vw;
+  line-height: 1.3;
+}
+
+.align-r {
+  text-align: right;
+}
+
+.align-c {
+  text-align: center;
+}
+
+@-webkit-keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  6% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-110%);
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  6% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-110%);
+  }
+}
+.typhoon .video {
+  width: 85%;
   aspect-ratio: 16/9;
   position: absolute;
   top: 0;
   right: 0;
 }
 .typhoon .left-box {
-  display: none;
   width: 28%;
   height: 85.5%;
   position: absolute;
@@ -208,41 +286,10 @@ input[type=password] {
 .typhoon .left-box .map .map-image {
   width: 100%;
 }
-.typhoon .left-box .map .map-time {
-  text-align: center;
-  font-size: 1.2vw;
-  margin-top: 4%;
-}
 .typhoon .left-box .info {
-  font-size: 1.34vw;
   margin-top: 14%;
 }
-.typhoon .left-box .info li {
-  margin-top: 3%;
-  display: flex;
-  align-items: center;
-}
-.typhoon .left-box .info li.no-bullet {
-  margin-top: 0;
-}
-.typhoon .left-box .info li::before {
-  content: "";
-  display: block;
-  width: 6px;
-  height: 12px;
-  background-color: #fff;
-  margin-right: 8px;
-  margin-bottom: 2px;
-}
-.typhoon .left-box .info li.no-bullet::before {
-  content: "";
-  display: block;
-  width: 8px;
-  height: 18px;
-  background-color: transparent;
-}
 .typhoon .bottom-box {
-  display: none;
   width: 100%;
   height: 15%;
   position: absolute;
@@ -297,27 +344,7 @@ input[type=password] {
   -webkit-animation: marquee 20s linear infinite;
           animation: marquee 20s linear infinite;
 }
-.typhoon .bottom-box .marquee p {
-  font-size: 2.4vw;
-}
-@-webkit-keyframes marquee {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-110%);
-  }
-}
-@keyframes marquee {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-110%);
-  }
-}
 .typhoon .avatar {
-  display: none;
   width: 13.5%;
   height: 34.1%;
   position: absolute;
@@ -344,18 +371,10 @@ input[type=password] {
   align-items: center;
   padding-left: 4%;
 }
-.typhoon .qr-box .title h4 {
-  font-size: 1.5vw;
-}
 .typhoon .qr-box .content {
   display: flex;
   align-items: center;
   padding-right: 3%;
-}
-.typhoon .qr-box .content p {
-  font-size: 1.2vw;
-  text-align: right;
-  line-height: 1.3;
 }
 .typhoon .qr-box .qrcode {
   height: 100%;
@@ -375,4 +394,119 @@ input[type=password] {
   right: 8%;
   bottom: 14%;
   background-color: darkgreen;
+}
+
+.earthquake .video {
+  width: 81.7%;
+  aspect-ratio: 16/9;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.earthquake .left-box {
+  width: 18.3%;
+  height: 100%;
+  background-color: #000;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.earthquake .left-box .map-title {
+  height: 5%;
+  background-color: #6e0000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4vw;
+}
+.earthquake .left-box .info {
+  padding: 11% 10%;
+}
+.earthquake .left-box .info .intensity {
+  color: #000;
+  font-size: 1.12vw;
+  font-weight: bold;
+  display: inline-block;
+  padding: 0.2vw 1vw 0.1vw 0.8vw;
+  margin-bottom: 5%;
+}
+.earthquake .left-box .info .intensity-5 {
+  background-color: #ffc000;
+}
+.earthquake .left-box .info .intensity-4 {
+  background-color: #ff0;
+  margin-top: 5%;
+}
+.earthquake .left-box .qr {
+  padding: 0% 10%;
+}
+.earthquake .left-box .qr .code {
+  width: 33%;
+  aspect-ratio: 1/1;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.earthquake .left-box .qr .code img {
+  width: 86%;
+}
+.earthquake .left-box .qr p {
+  margin-top: 4%;
+  font-size: 1.1vw;
+  color: #bbb;
+}
+.earthquake .bottom-box {
+  width: 81.7%;
+  height: 18.5%;
+  background-color: #0078df;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.earthquake .bottom-box .title {
+  display: flex;
+  height: 40%;
+  background-image: linear-gradient(to right, #001e53 16%, #004590 68%, #0078df 96%);
+}
+.earthquake .bottom-box .title h1 {
+  width: 15%;
+  background-color: #062254;
+  -webkit-clip-path: polygon(0 0, 80% 0%, 100% 100%, 0% 100%);
+          clip-path: polygon(0 0, 80% 0%, 100% 100%, 0% 100%);
+  font-size: 1.8vw;
+  display: flex;
+  align-items: center;
+  padding-left: 1.6vw;
+}
+.earthquake .bottom-box .title h2 {
+  display: flex;
+  align-items: center;
+  padding-left: 1vw;
+  font-size: 1.88vw;
+}
+.earthquake .bottom-box .marquee {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  right: -1vw;
+  height: 60%;
+  display: flex;
+  align-items: center;
+  overflow-x: hidden;
+}
+.earthquake .bottom-box .track {
+  position: absolute;
+  white-space: nowrap;
+  will-change: transform;
+  -webkit-animation: marquee 20s linear infinite;
+          animation: marquee 20s linear infinite;
+}
+.earthquake .avatar {
+  width: 13.5%;
+  height: 34.3%;
+  position: absolute;
+  bottom: 11%;
+  right: 3%;
+  background-color: green;
 }/*# sourceMappingURL=styles.css.map */

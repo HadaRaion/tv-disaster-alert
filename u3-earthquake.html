@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>UHD TV향 재난경보 UI - 지진</title>
+		<link rel="stylesheet" href="./assets/styles/styles.css" />
+	</head>
+	<body class="earthquake">
+		<div class="wrapper">
+			<div class="video">
+				<video loop muted>
+					<source src="./assets/video/video.mp4" type="video/mp4" />
+				</video>
+			</div>
+
+			<div class="left-box">
+				<h3 class="map-title">태풍 특보 발효현황</h3>
+				<div class="map-image">
+					<img src="./assets/images/earthquake-map.webp" alt="지진특보 발표현황" />
+				</div>
+				<p class="map-time t-md align-c">2023. 8. 25. 10:00 이후</p>
+
+				<div class="info">
+					<div class="intensity intensity-5">진도5</div>
+					<p>전남 목포, 전남 무안</p>
+					<div class="intensity intensity-4">진도4</div>
+					<p>전전남 해남, 전남 장흥,<br />전남 영암, 전남 나주,<br />전남 함평, 전남 영</p>
+				</div>
+				<div class="qr">
+					<div class="code">
+						<img src="./assets/images/earthquake-qr.svg" alt="부가서비스 QR코드" />
+					</div>
+					<p>
+						보다 자세한 정보는 QR코드<br />
+						스캔을 통해 확인할 수 있습니다.
+					</p>
+				</div>
+			</div>
+
+			<div class="bottom-box">
+				<div class="title">
+					<h1 class="headline">지진 경보</h1>
+					<h2>전남 목포에서 규모 4.1 지진 발생</h2>
+				</div>
+
+				<div class="marquee">
+					<div class="track">
+						<p class="content t-lg">
+							오늘 오전 08시 27분 전남 목포 북동쪽 12km 지역에서 규모 4.3 지진 발생. 낙하물로 부터
+							몸 보호, 진동 멈춘 후 가스와 전기를 차단하고 신속히 야외 넓은곳으로 대피, 여진 등
+							안전에 주의바랍니다.
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="avatar">수화</div>
+		</div>
+	</body>
+</html>

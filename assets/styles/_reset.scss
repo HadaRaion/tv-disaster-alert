@@ -11,25 +11,6 @@
 	text-shadow: none;
 }
 
-html,
-body {
-	width: 100vw;
-	height: 100vh;
-	overflow: hidden;
-	font-family: 'Spoqa Han Sans Neo', sans-serif;
-}
-
-body {
-	background-color: #000;
-	color: #fff;
-	display: flex;
-	align-items: center;
-}
-
-video {
-	width: 100%;
-}
-
 img {
 	height: auto;
 	max-width: 100%;
@@ -75,21 +56,10 @@ input[type='url'],
 [type='textarea'],
 textarea {
 	border-radius: 0;
-	-webkit-appearance: none;
 	outline: none;
 }
 
 input[type='text'],
 input[type='password'] {
 	padding-left: 10px;
-}
-
-.wrapper {
-	position: relative;
-	width: 100%;
-	aspect-ratio: 16 / 9;
-}
-
-.headline {
-	font-family: 'S Core Dream', sans-serif;
 }
