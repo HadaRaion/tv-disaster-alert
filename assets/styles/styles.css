@@ -279,7 +279,6 @@ p.t-sm {
 }
 .typhoon .left-box .map .map-title {
   background-color: #6e0000;
-  text-align: center;
   font-size: 1.4vw;
   padding: 3%;
 }
@@ -509,4 +508,130 @@ p.t-sm {
   bottom: 11%;
   right: 3%;
   background-color: green;
+}
+
+.forest-fires .video {
+  width: 100%;
+  aspect-ratio: 16/9;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.forest-fires .bottom-box {
+  width: 100%;
+  height: 14%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.forest-fires .bottom-box h1 {
+  background-color: #004172;
+  width: 7.7%;
+  height: 100%;
+  font-size: 2.1vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.forest-fires .bottom-box h2 {
+  width: 80%;
+  height: 34%;
+  position: absolute;
+  top: 0;
+  left: 7.7%;
+  padding-left: 2vw;
+  color: #466192;
+  font-size: 1.4vw;
+  background-image: linear-gradient(to right, #fff 65%, rgba(255, 255, 255, 0.7) 76%, rgba(255, 255, 255, 0));
+  display: flex;
+  align-items: center;
+}
+.forest-fires .bottom-box .marquee {
+  width: 92.3%;
+  height: 66%;
+  padding-left: 2vw;
+  background-color: #0a7cde;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 66%;
+  display: flex;
+  align-items: center;
+  overflow-x: hidden;
+}
+.forest-fires .bottom-box .track {
+  position: absolute;
+  white-space: nowrap;
+  will-change: transform;
+  -webkit-animation: marquee 20s linear infinite;
+          animation: marquee 20s linear infinite;
+}
+.forest-fires .right-box {
+  width: 20%;
+  height: 90.8%;
+  padding: 2% 2% 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.forest-fires .right-box .title {
+  background-color: #6e0000;
+  font-size: 1.4vw;
+  padding: 3%;
+}
+.forest-fires .right-box .time {
+  color: #bbbbbb;
+}
+.forest-fires .right-box .info {
+  margin-top: 12%;
+  color: #d8d8d8;
+}
+.forest-fires .avatar {
+  width: 11.4%;
+  height: 28.7%;
+  position: absolute;
+  right: 4.3%;
+  bottom: 9%;
+  background-color: green;
+}
+.forest-fires .qr-box {
+  width: 31%;
+  height: 10%;
+  position: absolute;
+  bottom: 4%;
+  right: 2%;
+  background-color: #0a7cde;
+  display: flex;
+  justify-content: space-between;
+}
+.forest-fires .qr-box .title {
+  width: 19%;
+  background-color: #004172;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.forest-fires .qr-box .content {
+  display: flex;
+  align-items: center;
+}
+.forest-fires .qr-box .qrcode {
+  height: 100%;
+  aspect-ratio: 1/1;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.forest-fires .qr-box .qrcode img {
+  width: 86%;
+}
+.forest-fires .qr-avatar {
+  width: 8.9%;
+  height: 22.4%;
+  position: absolute;
+  right: 7.6%;
+  bottom: 14%;
+  background-color: darkgreen;
 }/*# sourceMappingURL=styles.css.map */

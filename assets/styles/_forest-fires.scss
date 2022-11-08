@@ -1,0 +1,146 @@
+.forest-fires {
+	.video {
+		width: 100%;
+		aspect-ratio: 16 / 9;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+
+	.bottom-box {
+		width: 100%;
+		height: 14%;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+
+		h1 {
+			background-color: #004172;
+			width: 7.7%;
+			height: 100%;
+			font-size: 2.1vw;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		h2 {
+			width: 80%;
+			height: 34%;
+			position: absolute;
+			top: 0;
+			left: 7.7%;
+			padding-left: 2vw;
+			color: #466192;
+			font-size: 1.4vw;
+			background-image: linear-gradient(
+				to right,
+				#fff 65%,
+				rgba(255, 255, 255, 0.7) 76%,
+				rgba(255, 255, 255, 0)
+			);
+			display: flex;
+			align-items: center;
+		}
+
+		.marquee {
+			width: 92.3%;
+			height: 66%;
+			padding-left: 2vw;
+			background-color: #0a7cde;
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			height: 66%;
+			display: flex;
+			align-items: center;
+			overflow-x: hidden;
+		}
+		.track {
+			position: absolute;
+			white-space: nowrap;
+			will-change: transform;
+			animation: marquee 20s linear infinite;
+		}
+	}
+
+	.right-box {
+		width: 20%;
+		height: 90.8%;
+		padding: 2% 2% 0;
+		background-color: rgba($color: #000000, $alpha: 0.6);
+		position: absolute;
+		top: 0;
+		right: 0;
+
+		.title {
+			background-color: $red;
+			font-size: 1.4vw;
+			padding: 3%;
+		}
+
+		.time {
+			color: #bbbbbb;
+		}
+
+		.info {
+			margin-top: 12%;
+			color: #d8d8d8;
+		}
+	}
+
+	.avatar {
+		width: 11.4%;
+		height: 28.7%;
+		position: absolute;
+		right: 4.3%;
+		bottom: 9%;
+		background-color: green;
+	}
+
+	.qr-box {
+		width: 31%;
+		height: 10%;
+		position: absolute;
+		bottom: 4%;
+		right: 2%;
+		background-color: #0a7cde;
+		display: flex;
+		justify-content: space-between;
+
+		.title {
+			width: 19%;
+			background-color: #004172;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.content {
+			display: flex;
+			align-items: center;
+		}
+
+		.qrcode {
+			height: 100%;
+			aspect-ratio: 1 / 1;
+			background-color: #fff;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			img {
+				width: 86%;
+			}
+		}
+	}
+
+	.qr-avatar {
+		width: 8.9%;
+		height: 22.4%;
+		position: absolute;
+		right: 7.6%;
+		bottom: 14%;
+		background-color: darkgreen;
+	}
+}
