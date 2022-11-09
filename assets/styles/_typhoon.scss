@@ -1,11 +1,10 @@
 .typhoon {
 	.video {
-		width: 85%;
-		aspect-ratio: 16 / 9;
-		position: absolute;
-		top: 0;
-		right: 0;
-		// transform-origin: top right;
+		transition: $transition;
+
+		&.active {
+			width: 85%;
+		}
 	}
 
 	.left-box {
@@ -23,6 +22,15 @@
 		);
 		padding-top: 2.5%;
 		padding-left: 2%;
+
+		transform: translateX(-100%);
+		opacity: 0;
+		transition: $transition;
+
+		&.active {
+			transform: translateX(0%);
+			opacity: 1;
+		}
 
 		.map {
 			margin-right: 28%;
@@ -50,6 +58,18 @@
 		bottom: 0;
 		left: 0;
 		background-color: #0a7cde;
+		transform: translateY(100%);
+		opacity: 0;
+		transition: $transition;
+
+		&.active {
+			transform: translateY(0%);
+			opacity: 1;
+
+			.track {
+				animation: marquee 20s linear infinite;
+			}
+		}
 
 		.title {
 			width: 12%;
@@ -80,7 +100,12 @@
 			right: 0;
 			padding-left: 13%;
 			height: 34%;
-			background-image: linear-gradient(to right, #001e53 50%, #004590 81%, #0078df 91%);
+			background-image: linear-gradient(
+				to right,
+				rgba(0, 30, 83, 0.4) 50%,
+				rgba(0, 69, 144, 0.4) 81%,
+				rgba(0, 120, 223, 0.4) 91%
+			);
 			display: flex;
 			align-items: center;
 
@@ -104,7 +129,6 @@
 				position: absolute;
 				white-space: nowrap;
 				will-change: transform;
-				animation: marquee 20s linear infinite;
 			}
 		}
 	}
@@ -116,6 +140,12 @@
 		right: 3%;
 		bottom: 10%;
 		background-color: darkgreen;
+		opacity: 0;
+		transition: $transition;
+
+		&.active {
+			opacity: 1;
+		}
 	}
 
 	.qr-box {
@@ -127,6 +157,12 @@
 		background-color: #0a7cde;
 		display: flex;
 		justify-content: space-between;
+		opacity: 0;
+		transition: $transition;
+
+		&.active {
+			opacity: 1;
+		}
 
 		.title {
 			width: 22%;
@@ -168,5 +204,15 @@
 		right: 8%;
 		bottom: 14%;
 		background-color: darkgreen;
+		opacity: 0;
+		transition: $transition;
+
+		&.active {
+			opacity: 1;
+		}
+
+		video {
+			height: 100%;
+		}
 	}
 }

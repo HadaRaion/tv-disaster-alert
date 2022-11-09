@@ -51,6 +51,13 @@ li.no-bullet::before {
 	aspect-ratio: 16 / 9;
 }
 
+.video {
+	width: 100%;
+	aspect-ratio: 16 / 9;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
 .headline {
 	font-family: 'S Core Dream', sans-serif;
 

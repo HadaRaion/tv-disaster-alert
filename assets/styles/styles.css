@@ -7,16 +7,6 @@
   margin: 0;
 }
 
-::-moz-selection {
-  background: rgba(160, 114, 33, 0.32);
-  text-shadow: none;
-}
-
-::selection {
-  background: rgba(160, 114, 33, 0.32);
-  text-shadow: none;
-}
-
 img {
   height: auto;
   max-width: 100%;
@@ -36,38 +26,6 @@ a {
   text-decoration: none;
   color: inherit;
   cursor: pointer;
-}
-
-button {
-  background-color: transparent;
-  color: inherit;
-  border-width: 0;
-  padding: 0;
-  cursor: pointer;
-}
-
-input::-moz-focus-inner {
-  border: 0;
-  padding: 0;
-  margin: 0;
-}
-
-input[type=text],
-input[type=password],
-input[type=email],
-input[type=search],
-input[type=submit],
-input[type=tel],
-input[type=url],
-[type=textarea],
-textarea {
-  border-radius: 0;
-  outline: none;
-}
-
-input[type=text],
-input[type=password] {
-  padding-left: 10px;
 }
 
 :root {
@@ -201,6 +159,14 @@ li.no-bullet::before {
   aspect-ratio: 16/9;
 }
 
+.video {
+  width: 100%;
+  aspect-ratio: 16/9;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
 .headline {
   font-family: "S Core Dream", sans-serif;
 }
@@ -258,11 +224,10 @@ p.t-sm {
   }
 }
 .typhoon .video {
+  transition: all 0.5s ease;
+}
+.typhoon .video.active {
   width: 85%;
-  aspect-ratio: 16/9;
-  position: absolute;
-  top: 0;
-  right: 0;
 }
 .typhoon .left-box {
   width: 28%;
@@ -273,6 +238,13 @@ p.t-sm {
   background-image: linear-gradient(to right, #000 0%, #000 73%, rgba(0, 0, 0, 0.46) 88%, rgba(0, 0, 0, 0) 99%);
   padding-top: 2.5%;
   padding-left: 2%;
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+.typhoon .left-box.active {
+  transform: translateX(0%);
+  opacity: 1;
 }
 .typhoon .left-box .map {
   margin-right: 28%;
@@ -295,6 +267,17 @@ p.t-sm {
   bottom: 0;
   left: 0;
   background-color: #0a7cde;
+  transform: translateY(100%);
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+.typhoon .bottom-box.active {
+  transform: translateY(0%);
+  opacity: 1;
+}
+.typhoon .bottom-box.active .track {
+  -webkit-animation: marquee 20s linear infinite;
+          animation: marquee 20s linear infinite;
 }
 .typhoon .bottom-box .title {
   width: 12%;
@@ -318,7 +301,7 @@ p.t-sm {
   right: 0;
   padding-left: 13%;
   height: 34%;
-  background-image: linear-gradient(to right, #001e53 50%, #004590 81%, #0078df 91%);
+  background-image: linear-gradient(to right, rgba(0, 30, 83, 0.4) 50%, rgba(0, 69, 144, 0.4) 81%, rgba(0, 120, 223, 0.4) 91%);
   display: flex;
   align-items: center;
 }
@@ -340,8 +323,6 @@ p.t-sm {
   position: absolute;
   white-space: nowrap;
   will-change: transform;
-  -webkit-animation: marquee 20s linear infinite;
-          animation: marquee 20s linear infinite;
 }
 .typhoon .avatar {
   width: 13.5%;
@@ -350,6 +331,11 @@ p.t-sm {
   right: 3%;
   bottom: 10%;
   background-color: darkgreen;
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+.typhoon .avatar.active {
+  opacity: 1;
 }
 .typhoon .qr-box {
   width: 33%;
@@ -360,6 +346,11 @@ p.t-sm {
   background-color: #0a7cde;
   display: flex;
   justify-content: space-between;
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+.typhoon .qr-box.active {
+  opacity: 1;
 }
 .typhoon .qr-box .title {
   width: 22%;
@@ -393,14 +384,17 @@ p.t-sm {
   right: 8%;
   bottom: 14%;
   background-color: darkgreen;
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+.typhoon .qr-avatar.active {
+  opacity: 1;
+}
+.typhoon .qr-avatar video {
+  height: 100%;
 }
 
 .earthquake .video {
-  width: 100%;
-  aspect-ratio: 16/9;
-  position: absolute;
-  top: 0;
-  right: 0;
   transition: all 0.5s ease;
 }
 .earthquake .video.active {
@@ -488,7 +482,7 @@ p.t-sm {
 .earthquake .bottom-box .title {
   display: flex;
   height: 40%;
-  background-image: linear-gradient(to right, #001e53 16%, #004590 68%, #0078df 96%);
+  background-image: linear-gradient(to right, rgba(0, 30, 83, 0.5) 16%, rgba(0, 69, 144, 0.5) 68%, rgba(0, 120, 223, 0.5) 96%);
 }
 .earthquake .bottom-box .title h1 {
   width: 15%;
@@ -534,23 +528,24 @@ p.t-sm {
 .earthquake .avatar.active {
   opacity: 1;
 }
-.earthquake .avatar video {
-  height: 100%;
-}
 
-.forest-fires .video {
-  width: 100%;
-  aspect-ratio: 16/9;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
 .forest-fires .bottom-box {
   width: 100%;
   height: 14%;
   position: absolute;
   bottom: 0;
   left: 0;
+  transform: translateY(100%);
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+.forest-fires .bottom-box.active {
+  transform: translateY(0%);
+  opacity: 1;
+}
+.forest-fires .bottom-box.active .track {
+  -webkit-animation: marquee 20s linear infinite;
+          animation: marquee 20s linear infinite;
 }
 .forest-fires .bottom-box h1 {
   background-color: #004172;
@@ -591,8 +586,6 @@ p.t-sm {
   position: absolute;
   white-space: nowrap;
   will-change: transform;
-  -webkit-animation: marquee 20s linear infinite;
-          animation: marquee 20s linear infinite;
 }
 .forest-fires .right-box {
   width: 20%;
@@ -602,6 +595,13 @@ p.t-sm {
   position: absolute;
   top: 0;
   right: 0;
+  transform: translateX(100%);
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+.forest-fires .right-box.active {
+  transform: translateX(0%);
+  opacity: 1;
 }
 .forest-fires .right-box .title {
   background-color: #6e0000;
@@ -622,6 +622,11 @@ p.t-sm {
   right: 4.3%;
   bottom: 9%;
   background-color: green;
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+.forest-fires .avatar.active {
+  opacity: 1;
 }
 .forest-fires .qr-box {
   width: 31%;
@@ -632,6 +637,11 @@ p.t-sm {
   background-color: #0a7cde;
   display: flex;
   justify-content: space-between;
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+.forest-fires .qr-box.active {
+  opacity: 1;
 }
 .forest-fires .qr-box .title {
   width: 19%;
@@ -662,4 +672,9 @@ p.t-sm {
   right: 7.6%;
   bottom: 14%;
   background-color: darkgreen;
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+.forest-fires .qr-avatar.active {
+  opacity: 1;
 }/*# sourceMappingURL=styles.css.map */

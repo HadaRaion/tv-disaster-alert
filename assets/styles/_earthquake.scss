@@ -1,10 +1,5 @@
 .earthquake {
 	.video {
-		width: 100%;
-		aspect-ratio: 16 / 9;
-		position: absolute;
-		top: 0;
-		right: 0;
 		transition: $transition;
 
 		&.active {
@@ -102,7 +97,12 @@
 		.title {
 			display: flex;
 			height: 40%;
-			background-image: linear-gradient(to right, #001e53 16%, #004590 68%, #0078df 96%);
+			background-image: linear-gradient(
+				to right,
+				rgba(0, 30, 83, 0.5) 16%,
+				rgba(0, 69, 144, 0.5) 68%,
+				rgba(0, 120, 223, 0.5) 96%
+			);
 
 			h1 {
 				width: 15%;
@@ -152,10 +152,6 @@
 
 		&.active {
 			opacity: 1;
-		}
-
-		video {
-			height: 100%;
 		}
 	}
 }
