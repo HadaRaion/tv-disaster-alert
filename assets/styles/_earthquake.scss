@@ -1,11 +1,15 @@
 .earthquake {
 	.video {
-		width: 81.7%;
+		width: 100%;
 		aspect-ratio: 16 / 9;
 		position: absolute;
 		top: 0;
 		right: 0;
-		// transform-origin: top right;
+		transition: $transition;
+
+		&.active {
+			width: 81.7%;
+		}
 	}
 
 	.left-box {
@@ -15,6 +19,14 @@
 		position: absolute;
 		top: 0;
 		left: 0;
+		transform: translateX(-100%);
+		opacity: 0;
+		transition: $transition;
+
+		&.active {
+			transform: translateX(0%);
+			opacity: 1;
+		}
 
 		.map-title {
 			height: 5%;
@@ -74,6 +86,18 @@
 		position: absolute;
 		bottom: 0;
 		right: 0;
+		transform: translateY(100%);
+		opacity: 0;
+		transition: $transition;
+
+		&.active {
+			transform: translateY(0%);
+			opacity: 1;
+
+			.track {
+				animation: marquee 20s linear infinite;
+			}
+		}
 
 		.title {
 			display: flex;
@@ -113,7 +137,6 @@
 			position: absolute;
 			white-space: nowrap;
 			will-change: transform;
-			animation: marquee 20s linear infinite;
 		}
 	}
 
@@ -124,5 +147,15 @@
 		bottom: 11%;
 		right: 3%;
 		background-color: green;
+		opacity: 0;
+		transition: $transition;
+
+		&.active {
+			opacity: 1;
+		}
+
+		video {
+			height: 100%;
+		}
 	}
 }

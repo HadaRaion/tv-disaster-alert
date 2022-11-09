@@ -396,11 +396,15 @@ p.t-sm {
 }
 
 .earthquake .video {
-  width: 81.7%;
+  width: 100%;
   aspect-ratio: 16/9;
   position: absolute;
   top: 0;
   right: 0;
+  transition: all 0.5s ease;
+}
+.earthquake .video.active {
+  width: 81.7%;
 }
 .earthquake .left-box {
   width: 18.3%;
@@ -409,6 +413,13 @@ p.t-sm {
   position: absolute;
   top: 0;
   left: 0;
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+.earthquake .left-box.active {
+  transform: translateX(0%);
+  opacity: 1;
 }
 .earthquake .left-box .map-title {
   height: 5%;
@@ -462,6 +473,17 @@ p.t-sm {
   position: absolute;
   bottom: 0;
   right: 0;
+  transform: translateY(100%);
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+.earthquake .bottom-box.active {
+  transform: translateY(0%);
+  opacity: 1;
+}
+.earthquake .bottom-box.active .track {
+  -webkit-animation: marquee 20s linear infinite;
+          animation: marquee 20s linear infinite;
 }
 .earthquake .bottom-box .title {
   display: flex;
@@ -498,8 +520,6 @@ p.t-sm {
   position: absolute;
   white-space: nowrap;
   will-change: transform;
-  -webkit-animation: marquee 20s linear infinite;
-          animation: marquee 20s linear infinite;
 }
 .earthquake .avatar {
   width: 13.5%;
@@ -508,6 +528,14 @@ p.t-sm {
   bottom: 11%;
   right: 3%;
   background-color: green;
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+.earthquake .avatar.active {
+  opacity: 1;
+}
+.earthquake .avatar video {
+  height: 100%;
 }
 
 .forest-fires .video {

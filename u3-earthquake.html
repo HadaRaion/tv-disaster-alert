@@ -6,11 +6,12 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>UHD TV향 재난경보 UI - 지진</title>
 		<link rel="stylesheet" href="./assets/styles/styles.css" />
+		<script src="./assets/js/scripts.js" defer></script>
 	</head>
 	<body class="earthquake">
 		<div class="wrapper">
 			<div class="video">
-				<video loop muted>
+				<video loop>
 					<source src="./assets/video/video.mp4" type="video/mp4" />
 				</video>
 			</div>
@@ -56,7 +57,36 @@
 				</div>
 			</div>
 
-			<div class="avatar">수화</div>
+			<div class="avatar">
+				<video loop muted>
+					<source src="./assets/video/avatar_earthquake.webm" type="video/webm" />
+				</video>
+			</div>
 		</div>
+		<script>
+			window.addEventListener('keydown', event => {
+				switch (event.key) {
+					case '2':
+						document.querySelector('.video').classList.add('active');
+						document.querySelector('.left-box').classList.add('active');
+						document.querySelector('.bottom-box').classList.add('active');
+						document.querySelector('.avatar').classList.add('active');
+						document.querySelector('.avatar > video').play();
+
+						break;
+					case '3':
+						document.querySelector('.video').classList.remove('active');
+						document.querySelector('.left-box').classList.remove('active');
+						document.querySelector('.bottom-box').classList.remove('active');
+						document.querySelector('.avatar').classList.remove('active');
+						document.querySelector('.avatar > video').pause();
+						document.querySelector('.avatar > video').currentTime = 0;
+						break;
+
+					default:
+						break;
+				}
+			});
+		</script>
 	</body>
 </html>
