@@ -28,12 +28,6 @@ a {
   cursor: pointer;
 }
 
-:root {
-  --header-height: 100px;
-  --layout-max-width: 1310px;
-  --layout-margin: 3rem;
-}
-
 /* 스포카 한스 네오 */
 @font-face {
   font-family: "Spoqa Han Sans Neo";
@@ -208,27 +202,51 @@ p.t-sm {
   color: #bbbbbb;
 }
 
-@-webkit-keyframes marquee {
-  0% {
-    transform: translateX(0);
+.track1 {
+  position: absolute;
+  white-space: nowrap;
+  will-change: transform;
+  padding-right: 5vw;
+}
+
+.track2 {
+  position: absolute;
+  white-space: nowrap;
+  will-change: transform;
+  padding-right: 5vw;
+}
+
+@-webkit-keyframes marquee1 {
+  from {
+    transform: translateX(100%);
   }
-  6% {
+  to {
     transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-110%);
   }
 }
 
-@keyframes marquee {
-  0% {
+@keyframes marquee1 {
+  from {
+    transform: translateX(100%);
+  }
+  to {
     transform: translateX(0);
   }
-  6% {
-    transform: translateX(0);
+}
+@-webkit-keyframes marquee2 {
+  from {
+    transform: translateX(0%);
   }
-  100% {
-    transform: translateX(-110%);
+  to {
+    transform: translateX(-100%);
+  }
+}
+@keyframes marquee2 {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-100%);
   }
 }
 .typhoon .video {
@@ -283,9 +301,17 @@ p.t-sm {
   transform: translateY(0%);
   opacity: 1;
 }
-.typhoon .bottom-box.active .track {
-  -webkit-animation: marquee 20s linear infinite;
-          animation: marquee 20s linear infinite;
+.typhoon .bottom-box.active .track1 {
+  -webkit-animation: marquee1 20s linear infinite;
+          animation: marquee1 20s linear infinite;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+}
+.typhoon .bottom-box.active .track2 {
+  -webkit-animation: marquee2 20s linear infinite;
+          animation: marquee2 20s linear infinite;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
 }
 .typhoon .bottom-box .title {
   width: 12%;
@@ -326,11 +352,6 @@ p.t-sm {
   display: flex;
   align-items: center;
   overflow-x: hidden;
-}
-.typhoon .bottom-box .marquee .track {
-  position: absolute;
-  white-space: nowrap;
-  will-change: transform;
 }
 .typhoon .avatar {
   width: 13.5%;
@@ -483,9 +504,17 @@ p.t-sm {
   transform: translateY(0%);
   opacity: 1;
 }
-.earthquake .bottom-box.active .track {
-  -webkit-animation: marquee 20s linear infinite;
-          animation: marquee 20s linear infinite;
+.earthquake .bottom-box.active .track1 {
+  -webkit-animation: marquee1 20s linear infinite;
+          animation: marquee1 20s linear infinite;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+}
+.earthquake .bottom-box.active .track2 {
+  -webkit-animation: marquee2 20s linear infinite;
+          animation: marquee2 20s linear infinite;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
 }
 .earthquake .bottom-box .title {
   display: flex;
@@ -518,11 +547,6 @@ p.t-sm {
   align-items: center;
   overflow-x: hidden;
 }
-.earthquake .bottom-box .track {
-  position: absolute;
-  white-space: nowrap;
-  will-change: transform;
-}
 .earthquake .avatar {
   width: 13.5%;
   height: 34.3%;
@@ -551,9 +575,17 @@ p.t-sm {
   transform: translateY(0%);
   opacity: 1;
 }
-.forest-fires .bottom-box.active .track {
-  -webkit-animation: marquee 20s linear infinite;
-          animation: marquee 20s linear infinite;
+.forest-fires .bottom-box.active .track1 {
+  -webkit-animation: marquee1 20s linear infinite;
+          animation: marquee1 20s linear infinite;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+}
+.forest-fires .bottom-box.active .track2 {
+  -webkit-animation: marquee2 20s linear infinite;
+          animation: marquee2 20s linear infinite;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
 }
 .forest-fires .bottom-box h1 {
   background-color: #004172;
@@ -589,11 +621,6 @@ p.t-sm {
   display: flex;
   align-items: center;
   overflow-x: hidden;
-}
-.forest-fires .bottom-box .track {
-  position: absolute;
-  white-space: nowrap;
-  will-change: transform;
 }
 .forest-fires .right-box {
   width: 20%;

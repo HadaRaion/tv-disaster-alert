@@ -100,16 +100,34 @@ p.t-sm {
 	color: #bbbbbb;
 }
 
-@keyframes marquee {
-	0% {
+.track1 {
+	position: absolute;
+	white-space: nowrap;
+	will-change: transform;
+	padding-right: 5vw;
+}
+
+.track2 {
+	position: absolute;
+	white-space: nowrap;
+	will-change: transform;
+	padding-right: 5vw;
+}
+
+@keyframes marquee1 {
+	from {
+		transform: translateX(100%);
+	}
+	to {
 		transform: translateX(0);
 	}
+}
 
-	6% {
-		transform: translateX(0);
+@keyframes marquee2 {
+	from {
+		transform: translateX(0%);
 	}
-
-	100% {
-		transform: translateX(-110%);
+	to {
+		transform: translateX(-100%);
 	}
 }
