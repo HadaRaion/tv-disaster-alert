@@ -6,7 +6,6 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>UHD TV향 재난경보 UI - 태풍</title>
 		<link rel="icon" type="image/x-icon" href="./assets/images/favicon.ico" />
-
 		<link rel="stylesheet" href="./assets/styles/styles_221130.css" />
 		<script src="./assets/js/scripts.js" defer></script>
 	</head>
@@ -91,6 +90,16 @@
 		</div>
 
 		<script>
+			const backgroundVideo = document.querySelector('.video');
+			const leftDisasterInfo = document.querySelector('.left-box');
+			const rightDisasterInfo = document.querySelector('.right-box');
+			const bottomDisasterInfo = document.querySelector('.bottom-box');
+			const avatarVideoWrapper = document.querySelector('.avatar');
+			const avatarVideo = document.querySelector('.avatar > video');
+			const qrInfo = document.querySelector('.qr-box');
+			const qrAvatarVideoWrapper = document.querySelector('.qr-avatar');
+			const qrAvatarVideo = document.querySelector('.qr-avatar > video');
+
 			function showDisasterInfo() {
 				backgroundVideo.classList.add('active');
 				leftDisasterInfo.classList.add('active');
