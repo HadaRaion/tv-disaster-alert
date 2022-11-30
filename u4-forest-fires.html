@@ -5,7 +5,8 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>UHD TV향 재난경보 UI - 산불</title>
-		<link rel="stylesheet" href="./assets/styles/styles221109.css" />
+		<link rel="icon" type="image/x-icon" href="./assets/images/favicon.ico" />
+		<link rel="stylesheet" href="./assets/styles/styles_221130.css" />
 		<script src="./assets/js/scripts.js" defer></script>
 	</head>
 	<body class="forest-fires">
@@ -18,7 +19,7 @@
 
 			<div class="bottom-box">
 				<h1 class="headline">산불<br />경보</h1>
-				<h2>청주시 남성면 산불 2간계 발령 … 관활기관 진화에 총력 대응</h2>
+				<h2>청주시 남성면 산불 2간계 발령 … 관할기관 진화에 총력 대응</h2>
 				<div class="marquee">
 					<div class="track1">
 						<p class="content t-lg">
@@ -39,7 +40,7 @@
 				<div class="map">
 					<h3 class="map-title align-c">산불 특보 발효현황</h3>
 					<div class="map-image">
-						<img src="./assets/images/forest-fires-map.webp" alt="산불특보 발효현황" />
+						<img src="./assets/images/forest-fires-map.svg" alt="산불특보 발효현황" />
 					</div>
 					<p class="map-time t-md align-c">2023. 8. 25. 10:00 이후</p>
 				</div>
@@ -51,7 +52,7 @@
 			</div>
 			<div class="avatar">
 				<video loop muted>
-					<source src="./assets/video/avatar_fire.webm" type="video/webm" />
+					<source src="./assets/video/avatar.mp4" type="video/mp4" />
 				</video>
 			</div>
 
@@ -72,40 +73,58 @@
 
 			<div class="qr-avatar">
 				<video loop muted>
-					<source src="./assets/video/avatar_fire.webm" type="video/webm" />
+					<source src="./assets/video/avatar.mp4" type="video/mp4" />
 				</video>
 			</div>
 		</div>
 
 		<script>
+			function showDisasterInfo() {
+				rightDisasterInfo.classList.add('active');
+				bottomDisasterInfo.classList.add('active');
+				avatarVideoWrapper.classList.add('active');
+				avatarVideo.play();
+			}
+
+			function hideDisasterInfo() {
+				rightDisasterInfo.classList.remove('active');
+				bottomDisasterInfo.classList.remove('active');
+				avatarVideoWrapper.classList.remove('active');
+				avatarVideo.pause();
+				avatarVideo.currentTime = 0;
+			}
+
+			function showQrInfo() {
+				qrInfo.classList.add('active');
+				qrAvatarVideoWrapper.classList.add('active');
+				qrAvatarVideo.play();
+			}
+
+			function hideQrInfo() {
+				qrInfo.classList.remove('active');
+				qrAvatarVideoWrapper.classList.remove('active');
+				qrAvatarVideo.pause();
+				qrAvatarVideo.currentTime = 0;
+			}
+
 			window.addEventListener('keydown', event => {
 				switch (event.key) {
 					case '2':
-						document.querySelector('.right-box').classList.add('active');
-						document.querySelector('.bottom-box').classList.add('active');
-						document.querySelector('.avatar').classList.add('active');
-						document.querySelector('.avatar > video').play();
+						hideQrInfo();
+						setTimeout(() => showDisasterInfo(), 500);
 						break;
 
 					case '3':
-						document.querySelector('.right-box').classList.remove('active');
-						document.querySelector('.bottom-box').classList.remove('active');
-						document.querySelector('.avatar').classList.remove('active');
-						document.querySelector('.avatar > video').pause();
-						document.querySelector('.avatar > video').currentTime = 0;
+						hideDisasterInfo();
 						break;
 
 					case '4':
-						document.querySelector('.qr-box').classList.add('active');
-						document.querySelector('.qr-avatar').classList.add('active');
-						document.querySelector('.qr-avatar > video').play();
+						hideDisasterInfo();
+						setTimeout(() => showQrInfo(), 500);
 						break;
 
 					case '5':
-						document.querySelector('.qr-box').classList.remove('active');
-						document.querySelector('.qr-avatar').classList.remove('active');
-						document.querySelector('.qr-avatar > video').pause();
-						document.querySelector('.qr-avatar  > video').currentTime = 0;
+						hideQrInfo();
 						break;
 
 					default:

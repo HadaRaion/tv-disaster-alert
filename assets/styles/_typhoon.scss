@@ -134,17 +134,26 @@
 	}
 
 	.avatar {
-		width: 13.5%;
-		height: 34.1%;
+		width: 13.4%;
+		height: 31.9%;
 		position: absolute;
 		right: 3%;
-		bottom: 10%;
-		background-color: darkgreen;
+		bottom: 9.8%;
 		opacity: 0;
 		transition: $transition;
 
 		&.active {
 			opacity: 1;
+		}
+
+		&.zoom1 {
+			width: 17.9%;
+			height: 42.4%;
+		}
+
+		&.zoom2 {
+			width: 22.3%;
+			height: 52.8%;
 		}
 	}
 
@@ -198,17 +207,26 @@
 	}
 
 	.qr-avatar {
-		width: 8.9%;
-		height: 22.4%;
+		width: 11.2%;
+		height: 26.7%;
 		position: absolute;
-		right: 8%;
-		bottom: 14%;
-		background-color: darkgreen;
+		right: 7.65%;
+		bottom: 13.9%;
 		opacity: 0;
 		transition: $transition;
 
 		&.active {
 			opacity: 1;
+		}
+
+		&.zoom1 {
+			width: 13.4%;
+			height: 31.9%;
+		}
+
+		&.zoom2 {
+			width: 17.9%;
+			height: 42.4%;
 		}
 
 		video {
