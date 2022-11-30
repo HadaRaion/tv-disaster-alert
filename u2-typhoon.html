@@ -6,7 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>UHD TV향 재난경보 UI - 태풍</title>
 		<link rel="icon" type="image/x-icon" href="./assets/images/favicon.ico" />
-		<link rel="stylesheet" href="./assets/styles/styles_221130.css" />
+		<link rel="stylesheet" href="./assets/styles/styles_221201.css" />
 		<script src="./assets/js/scripts.js" defer></script>
 	</head>
 	<body class="typhoon">
@@ -128,21 +128,6 @@
 				qrAvatarVideoWrapper.classList.remove('active');
 				qrAvatarVideo.pause();
 				qrAvatarVideo.currentTime = 0;
-			}
-
-			function increaseVideoSize(videoWrapper) {
-				videoWrapper.classList.add('zoom1');
-				videoWrapper.classList.remove('zoom2');
-			}
-
-			function increaseVideoSize2X(videoWrapper) {
-				videoWrapper.classList.add('zoom2');
-				videoWrapper.classList.remove('zoom1');
-			}
-
-			function defaultVideoSize(videoWrapper) {
-				videoWrapper.classList.remove('zoom1');
-				videoWrapper.classList.remove('zoom2');
 			}
 
 			window.addEventListener('keydown', event => {

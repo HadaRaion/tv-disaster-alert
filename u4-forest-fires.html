@@ -6,7 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>UHD TV향 재난경보 UI - 산불</title>
 		<link rel="icon" type="image/x-icon" href="./assets/images/favicon.ico" />
-		<link rel="stylesheet" href="./assets/styles/styles_221130.css" />
+		<link rel="stylesheet" href="./assets/styles/styles_221201.css" />
 		<script src="./assets/js/scripts.js" defer></script>
 	</head>
 	<body class="forest-fires">
@@ -136,6 +136,17 @@
 					case '5':
 						hideQrInfo();
 						break;
+
+					case 'a':
+						increaseVideoSize(qrAvatarVideoWrapper);
+						break;
+
+					case 's':
+						increaseVideoSize2X(qrAvatarVideoWrapper);
+						break;
+
+					case 'd':
+						defaultVideoSize(qrAvatarVideoWrapper);
 
 					default:
 						break;

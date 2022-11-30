@@ -10,3 +10,18 @@ window.addEventListener('keydown', event => {
 			break;
 	}
 });
+
+function increaseVideoSize(videoWrapper) {
+	videoWrapper.classList.add('zoom1');
+	videoWrapper.classList.remove('zoom2');
+}
+
+function increaseVideoSize2X(videoWrapper) {
+	videoWrapper.classList.add('zoom2');
+	videoWrapper.classList.remove('zoom1');
+}
+
+function defaultVideoSize(videoWrapper) {
+	videoWrapper.classList.remove('zoom1');
+	videoWrapper.classList.remove('zoom2');
+}

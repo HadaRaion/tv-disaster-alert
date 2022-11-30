@@ -152,5 +152,15 @@
 		&.active {
 			opacity: 1;
 		}
+
+		&.zoom1 {
+			width: 17.9%;
+			height: 42.4%;
+		}
+
+		&.zoom2 {
+			width: 22.3%;
+			height: 52.8%;
+		}
 	}
 }

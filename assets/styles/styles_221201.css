@@ -9,7 +9,7 @@
 
 img {
   height: auto;
-  max-width: 100%;
+  width: 100%;
   vertical-align: bottom;
 }
 
@@ -538,6 +538,14 @@ p.t-sm {
 .earthquake .avatar.active {
   opacity: 1;
 }
+.earthquake .avatar.zoom1 {
+  width: 17.9%;
+  height: 42.4%;
+}
+.earthquake .avatar.zoom2 {
+  width: 22.3%;
+  height: 52.8%;
+}
 
 .forest-fires .bottom-box {
   width: 100%;
@@ -679,10 +687,18 @@ p.t-sm {
   height: 26.7%;
   position: absolute;
   right: 7.66%;
-  bottom: 13.9%;
+  bottom: 14.1%;
   opacity: 0;
   transition: all 0.5s ease;
 }
 .forest-fires .qr-avatar.active {
   opacity: 1;
+}
+.forest-fires .qr-avatar.zoom1 {
+  width: 13.4%;
+  height: 31.9%;
+}
+.forest-fires .qr-avatar.zoom2 {
+  width: 17.9%;
+  height: 42.4%;
 }/*# sourceMappingURL=styles.css.map */
