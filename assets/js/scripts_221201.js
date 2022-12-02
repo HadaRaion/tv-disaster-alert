@@ -11,70 +11,64 @@ window.addEventListener('keydown', event => {
 	}
 });
 
+// Pages
 const typhoonPage = document.body.classList.contains('typhoon');
 const earthquakePage = document.body.classList.contains('earthquake');
 const forestFiresPage = document.body.classList.contains('forest-fires');
 
+// Elements
+const backgroundVideo = document.querySelector('.video');
+const leftDisasterInfo = document.querySelector('.left-box');
+const rightDisasterInfo = document.querySelector('.right-box');
+const bottomDisasterInfo = document.querySelector('.bottom-box');
+const avatarVideoWrapper = document.querySelector('.avatar');
+const avatarVideo = document.querySelector('.avatar > video');
+const qrInfo = document.querySelector('.qr-box');
+const qrAvatarVideoWrapper = document.querySelector('.qr-avatar');
+const qrAvatarVideo = document.querySelector('.qr-avatar > video');
+
 if (typhoonPage) {
-	const backgroundVideo = document.querySelector('.video');
-	const leftDisasterInfo = document.querySelector('.left-box');
-	const rightDisasterInfo = document.querySelector('.right-box');
-	const bottomDisasterInfo = document.querySelector('.bottom-box');
-	const avatarVideoWrapper = document.querySelector('.avatar');
-	const avatarVideo = document.querySelector('.avatar > video');
-	const qrInfo = document.querySelector('.qr-box');
-	const qrAvatarVideoWrapper = document.querySelector('.qr-avatar');
-	const qrAvatarVideo = document.querySelector('.qr-avatar > video');
-
-	function showDisasterInfo() {
-		backgroundVideo.classList.add('active');
-		leftDisasterInfo.classList.add('active');
-		bottomDisasterInfo.classList.add('active');
-		avatarVideoWrapper.classList.add('active');
-		avatarVideo.play();
-	}
-
-	function hideDisasterInfo() {
-		backgroundVideo.classList.remove('active');
-		leftDisasterInfo.classList.remove('active');
-		bottomDisasterInfo.classList.remove('active');
-		avatarVideoWrapper.classList.remove('active');
-		avatarVideo.pause();
-		avatarVideo.currentTime = 0;
-	}
-
-	function showQrInfo() {
-		qrInfo.classList.add('active');
-		qrAvatarVideoWrapper.classList.add('active');
-		qrAvatarVideo.play();
-	}
-
-	function hideQrInfo() {
-		qrInfo.classList.remove('active');
-		qrAvatarVideoWrapper.classList.remove('active');
-		qrAvatarVideo.pause();
-		qrAvatarVideo.currentTime = 0;
-	}
-
 	window.addEventListener('keydown', event => {
 		switch (event.key) {
 			case '2':
-				hideQrInfo();
-				setTimeout(() => showDisasterInfo(), 500);
+				hideInfo(qrAvatarVideo, qrInfo, qrAvatarVideoWrapper);
+				setTimeout(
+					() =>
+						showInfo(
+							avatarVideo,
+							backgroundVideo,
+							leftDisasterInfo,
+							bottomDisasterInfo,
+							avatarVideoWrapper
+						),
+					500
+				);
 
 				break;
 
 			case '3':
-				hideDisasterInfo();
+				hideInfo(
+					avatarVideo,
+					backgroundVideo,
+					leftDisasterInfo,
+					bottomDisasterInfo,
+					avatarVideoWrapper
+				);
 				break;
 
 			case '4':
-				hideDisasterInfo();
-				setTimeout(() => showQrInfo(), 500);
+				hideInfo(
+					avatarVideo,
+					backgroundVideo,
+					leftDisasterInfo,
+					bottomDisasterInfo,
+					avatarVideoWrapper
+				);
+				setTimeout(() => showInfo(qrAvatarVideo, qrInfo, qrAvatarVideoWrapper), 500);
 				break;
 
 			case '5':
-				hideQrInfo();
+				hideInfo(qrAvatarVideo, qrInfo, qrAvatarVideoWrapper);
 				break;
 
 			case 'q':
@@ -105,26 +99,27 @@ if (typhoonPage) {
 		}
 	});
 }
+
 if (earthquakePage) {
-	const avatarVideoWrapper = document.querySelector('.avatar');
-
 	window.addEventListener('keydown', event => {
 		switch (event.key) {
 			case '2':
-				document.querySelector('.video').classList.add('active');
-				document.querySelector('.left-box').classList.add('active');
-				document.querySelector('.bottom-box').classList.add('active');
-				document.querySelector('.avatar').classList.add('active');
-				document.querySelector('.avatar > video').play();
-
+				showInfo(
+					avatarVideo,
+					backgroundVideo,
+					leftDisasterInfo,
+					bottomDisasterInfo,
+					avatarVideoWrapper
+				);
 				break;
 			case '3':
-				document.querySelector('.video').classList.remove('active');
-				document.querySelector('.left-box').classList.remove('active');
-				document.querySelector('.bottom-box').classList.remove('active');
-				document.querySelector('.avatar').classList.remove('active');
-				document.querySelector('.avatar > video').pause();
-				document.querySelector('.avatar > video').currentTime = 0;
+				hideInfo(
+					avatarVideo,
+					backgroundVideo,
+					leftDisasterInfo,
+					bottomDisasterInfo,
+					avatarVideoWrapper
+				);
 				break;
 
 			case 'q':
@@ -144,63 +139,35 @@ if (earthquakePage) {
 		}
 	});
 }
+
 if (forestFiresPage) {
-	const backgroundVideo = document.querySelector('.video');
-	const leftDisasterInfo = document.querySelector('.left-box');
-	const rightDisasterInfo = document.querySelector('.right-box');
-	const bottomDisasterInfo = document.querySelector('.bottom-box');
-	const avatarVideoWrapper = document.querySelector('.avatar');
-	const avatarVideo = document.querySelector('.avatar > video');
-	const qrInfo = document.querySelector('.qr-box');
-	const qrAvatarVideoWrapper = document.querySelector('.qr-avatar');
-	const qrAvatarVideo = document.querySelector('.qr-avatar > video');
-
-	function showDisasterInfo() {
-		rightDisasterInfo.classList.add('active');
-		bottomDisasterInfo.classList.add('active');
-		avatarVideoWrapper.classList.add('active');
-		avatarVideo.play();
-	}
-
-	function hideDisasterInfo() {
-		rightDisasterInfo.classList.remove('active');
-		bottomDisasterInfo.classList.remove('active');
-		avatarVideoWrapper.classList.remove('active');
-		avatarVideo.pause();
-		avatarVideo.currentTime = 0;
-	}
-
 	function showQrInfo() {
 		qrInfo.classList.add('active');
 		qrAvatarVideoWrapper.classList.add('active');
 		qrAvatarVideo.play();
 	}
 
-	function hideQrInfo() {
-		qrInfo.classList.remove('active');
-		qrAvatarVideoWrapper.classList.remove('active');
-		qrAvatarVideo.pause();
-		qrAvatarVideo.currentTime = 0;
-	}
-
 	window.addEventListener('keydown', event => {
 		switch (event.key) {
 			case '2':
-				hideQrInfo();
-				setTimeout(() => showDisasterInfo(), 500);
+				hideInfo(qrAvatarVideo, qrInfo, qrAvatarVideoWrapper);
+				setTimeout(
+					() => showInfo(avatarVideo, rightDisasterInfo, bottomDisasterInfo, avatarVideoWrapper),
+					500
+				);
 				break;
 
 			case '3':
-				hideDisasterInfo();
+				hideInfo(avatarVideo, rightDisasterInfo, bottomDisasterInfo, avatarVideoWrapper);
 				break;
 
 			case '4':
-				hideDisasterInfo();
-				setTimeout(() => showQrInfo(), 500);
+				hideInfo(avatarVideo, rightDisasterInfo, bottomDisasterInfo, avatarVideoWrapper);
+				setTimeout(() => showInfo(qrAvatarVideo, qrInfo, qrAvatarVideoWrapper), 500);
 				break;
 
 			case '5':
-				hideQrInfo();
+				hideInfo(qrAvatarVideo, qrInfo, qrAvatarVideoWrapper);
 				break;
 
 			case 'a':
@@ -218,6 +185,21 @@ if (forestFiresPage) {
 				break;
 		}
 	});
+}
+
+function showInfo(videoToPlay, ...elements) {
+	elements.forEach(el => {
+		el.classList.add('active');
+	});
+	videoToPlay.play();
+}
+
+function hideInfo(videoToStop, ...elements) {
+	elements.forEach(el => {
+		el.classList.remove('active');
+	});
+	videoToStop.pause();
+	videoToStop.currentTime = 0;
 }
 
 function increaseVideoSize(videoWrapper) {
