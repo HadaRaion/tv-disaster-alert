@@ -326,17 +326,16 @@ p.t-sm {
   bottom: 9.8%;
   opacity: 0;
   transition: all 0.5s ease;
+  transform-origin: bottom right;
 }
 .typhoon .avatar.active {
   opacity: 1;
 }
 .typhoon .avatar.zoom1 {
-  width: 17.9%;
-  height: 42.4%;
+  transform: scale(1.33);
 }
 .typhoon .avatar.zoom2 {
-  width: 22.3%;
-  height: 52.8%;
+  transform: scale(1.65);
 }
 .typhoon .qr-box {
   width: 33%;
@@ -383,20 +382,19 @@ p.t-sm {
   height: 26.7%;
   position: absolute;
   right: 7.65%;
-  bottom: 13.9%;
+  bottom: 13.94%;
   opacity: 0;
   transition: all 0.5s ease;
+  transform-origin: bottom right;
 }
 .typhoon .qr-avatar.active {
   opacity: 1;
 }
 .typhoon .qr-avatar.zoom1 {
-  width: 13.4%;
-  height: 31.9%;
+  transform: scale(1.2);
 }
 .typhoon .qr-avatar.zoom2 {
-  width: 17.9%;
-  height: 42.4%;
+  transform: scale(1.6);
 }
 .typhoon .qr-avatar video {
   height: 100%;
@@ -534,17 +532,16 @@ p.t-sm {
   right: 3%;
   opacity: 0;
   transition: all 0.5s ease;
+  transform-origin: bottom right;
 }
 .earthquake .avatar.active {
   opacity: 1;
 }
 .earthquake .avatar.zoom1 {
-  width: 17.9%;
-  height: 42.4%;
+  transform: scale(1.33);
 }
 .earthquake .avatar.zoom2 {
-  width: 22.3%;
-  height: 52.8%;
+  transform: scale(1.65);
 }
 
 .forest-fires .bottom-box {
@@ -687,18 +684,17 @@ p.t-sm {
   height: 26.7%;
   position: absolute;
   right: 7.66%;
-  bottom: 14.1%;
+  bottom: 13.83%;
   opacity: 0;
   transition: all 0.5s ease;
+  transform-origin: bottom right;
 }
 .forest-fires .qr-avatar.active {
   opacity: 1;
 }
 .forest-fires .qr-avatar.zoom1 {
-  width: 13.4%;
-  height: 31.9%;
+  transform: scale(1.2);
 }
 .forest-fires .qr-avatar.zoom2 {
-  width: 17.9%;
-  height: 42.4%;
+  transform: scale(1.6);
 }/*# sourceMappingURL=styles.css.map */

@@ -141,19 +141,22 @@
 		bottom: 9.8%;
 		opacity: 0;
 		transition: $transition;
+		transform-origin: bottom right;
 
 		&.active {
 			opacity: 1;
 		}
 
 		&.zoom1 {
-			width: 17.9%;
-			height: 42.4%;
+			transform: scale(1.33);
+			// width: 17.9%;
+			// height: 42.4%;
 		}
 
 		&.zoom2 {
-			width: 22.3%;
-			height: 52.8%;
+			transform: scale(1.65);
+			// width: 22.3%;
+			// height: 52.8%;
 		}
 	}
 
@@ -211,22 +214,25 @@
 		height: 26.7%;
 		position: absolute;
 		right: 7.65%;
-		bottom: 13.9%;
+		bottom: 13.94%;
 		opacity: 0;
 		transition: $transition;
+		transform-origin: bottom right;
 
 		&.active {
 			opacity: 1;
 		}
 
 		&.zoom1 {
-			width: 13.4%;
-			height: 31.9%;
+			transform: scale(1.2);
+			// width: 13.4%;
+			// height: 31.9%;
 		}
 
 		&.zoom2 {
-			width: 17.9%;
-			height: 42.4%;
+			transform: scale(1.6);
+			// width: 17.9%;
+			// height: 42.4%;
 		}
 
 		video {
